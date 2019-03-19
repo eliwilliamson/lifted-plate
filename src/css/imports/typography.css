@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|Poppins:400,500|Roboto:500');
+
+html,
+body,
+section {
+  color: $grey;
+  font-size: $tiny;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: $xl;
+  line-height: 98px;
+  font-weight: $bold;
+}
+
+h2 {
+  font-size: $small;
+  line-height: $medium;
+  font-weight: $regular;
+  margin-top: 18px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 28px;
+}

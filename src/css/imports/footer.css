@@ -1,0 +1,17 @@
+.footer {
+  position: relative;
+
+  .copyright {
+    position: absolute;
+    bottom: $tiny;
+    left: $small;
+    opacity: 0.3;
+    font-size: 10px;
+    line-height: $medium;
+
+    @media screen and (min-width: $tablet) {
+      left: $medium;
+      bottom: $small;
+    }
+  }
+}

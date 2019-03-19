@@ -1,0 +1,87 @@
+.header {
+  position: fixed;
+  display: flex;
+  height: 80vh;
+  top: 10vh;
+  left: $small;
+
+  .indicator,
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .indicator {
+    font-family: $roboto;
+    justify-content: space-between;
+
+    .sum {
+      color: $lightGrey;
+    }
+
+    .number,
+    .button-nav {
+      transform: rotateZ(-90deg);
+    }
+
+    .nav-arrow-link {
+      color: $grey;
+
+      &:disabled {
+        color: $lightGrey;
+      }
+    }
+
+    .progress-bar {
+      height: calc(100% - $xl);
+      align-self: stretch;
+      width: 100%;
+      position: relative;
+
+      & > [class*="bar"] {
+        width: 2px;
+        margin: 0 auto;
+      }
+
+      .active-bar {
+        background: $green;
+        position: absolute;
+        left: 50%;
+        margin-left: -1px;
+        transition: height .5s ease;
+      }
+
+      .bg-bar {
+        height: 100%;
+        background: $lightGreen;
+      }
+    }
+  }
+
+
+  nav {
+    justify-content: center;
+
+    .nav-link {
+      color: $grey;
+      display: flex;
+      font-weight: $bold;
+      font-size: 12px;
+      opacity: .5;
+      letter-spacing: 3px;
+      line-height: 33px;
+      margin: 0;
+      padding: 0;
+      transition: opacity .5s ease;
+
+      &.active,
+      &:hover {
+        opacity: 1;
+      }
+
+      &#contact-us-link {
+        color: $orange;
+      }
+    }
+  }
+}

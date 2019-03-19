@@ -1,0 +1,17 @@
+a,
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+  font-weight: $regular;
+  text-decoration: none;
+
+  &:visited,
+  &:active,
+  &:focus {
+    color: inherit;
+  }
+}

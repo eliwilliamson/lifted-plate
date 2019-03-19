@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:900|Roboto:700');
+@import "imports/reset.css";
+@import "imports/global.css";
+@import "imports/typography.css";
+@import "imports/buttons.css";
+@import "imports/header.css";
+@import "imports/footer.css";
+
+section {
+  height: 100vh;
+  /*background: blue;
+
+  &:nth-child(odd) {
+    background: red;
+  }*/
+}
+
+.hero {
+
+}
+
+.video {
+
+}
+
+.our-story {
+
+}
+
+.occasions {
+
+}
+
+.contact-us {
+
+}

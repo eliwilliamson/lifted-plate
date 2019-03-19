@@ -1,0 +1,26 @@
+@lost gutter 20px;
+@lost flexbox flex;
+
+.container {
+  lost-center: 940px;
+  padding: 0 $small;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+section {
+  margin: 0;
+  padding: 0;
+  font-family: $poppins;
+  font-size: $tiny;
+  color: $grey;
+}
+
+.clearfix {
+  lost-utility: clearfix;
+}
