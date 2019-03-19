@@ -15,3 +15,15 @@ button {
     color: inherit;
   }
 }
+
+.nav-link,
+.our-story .cta .link {
+  text-transform: uppercase;
+  font-weight: $bold;
+  font-size: 12px;
+  opacity: .5;
+  letter-spacing: 3px;
+  line-height: 33px;
+  margin: 0;
+  padding: 0;
+}

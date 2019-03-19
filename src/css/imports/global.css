@@ -24,3 +24,12 @@ section {
 .clearfix {
   lost-utility: clearfix;
 }
+
+hr {
+  border: none;
+  height: 1px;
+  background: $green;
+  width: $xl;
+  margin: $tiny 0;
+  transform: translateX(calc($xl / -2));
+}

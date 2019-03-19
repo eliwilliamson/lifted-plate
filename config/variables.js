@@ -10,8 +10,10 @@ module.exports = {
   grey: '#070707',
   red: '#F6705D',
   blue: '#8AC4FA',
+  lightestGreen: '#F9FCF6',
   lightGreen: '#D6E9C9',
   green: '#79B74B',
+  lightOrange: '#EC9251',
   orange: '#E46407',
 
   // typography

@@ -6,29 +6,229 @@
 @import "imports/header.css";
 @import "imports/footer.css";
 
-section {
-  height: 100vh;
-  /*background: blue;
-
-  &:nth-child(odd) {
-    background: red;
-  }*/
+section:not(.our-story) {
+  background-color: white;
 }
 
 .hero {
+  lost-align: middle-left;
+  position: relative;
+  margin-bottom: calc(300px + calc($large * 2) + 106px); /* height of video parallax */
+  height: 100vh;
+  box-sizing: border-box;
+  padding: $large 0;
 
+  &:after {
+    content: '';
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: url(/img/hero-bg.png) 55vw 0 no-repeat;
+    background-size: contain;
+    background-size: auto 100%;
+    height: calc(100vh + $large);
+  }
+
+  .content {
+    lost-column: 3/5;
+
+    .paragraphs {
+      lost-align: top;
+    }
+  }
+
+  .logo {
+    height: $large;
+    width: auto;
+    margin-bottom: $small;
+  }
+
+  h3 {
+    margin-bottom: $micro;
+  }
+
+  p {
+    color: $lightGrey;
+    lost-column: 1/2 2;
+  }
 }
 
 .video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
 
+  iframe {
+    width: 100vw;
+    height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+    min-height: 100vh;
+    min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .our-story {
+  position: relative;
+  padding-bottom: calc(34px + $large);
 
+  &:after {
+    content: '';
+    background: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    height: calc(100% - $large - 106px);
+  }
+
+  .container {
+    background: $lightestGreen;
+    margin-top: calc(-106px - $large);
+    position: relative;
+    box-sizing: border-box;
+    padding: $large $large $large 0;
+    z-index: 2;
+    align-items: flex-start;
+
+    > * {
+      z-index: 1;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      background: $lightestGreen;
+      width: 5000px;
+      height: 100%;
+      left: calc(50% - 5000px);
+      top: 0;
+    }
+  }
+
+  .headline {
+    lost-column: 3/12;
+    position: relative;
+
+    hr {
+      position: absolute;
+      right: 0;
+      top: 7px;
+      transform: none;
+      z-index: -1;
+    }
+  }
+
+  .content {
+    lost-column: 7/12;
+    margin-bottom: -139px;
+
+    p:first-child {
+      margin-top: 6px;
+    }
+  }
+
+  .cta {
+    lost-column: 3/12;
+    lost-offset: -1/12;
+    background: $orange;
+    color: white;
+    box-sizing: border-box;
+    padding: $small;
+    transform: translateX(calc((100% / 3) - 3px + $small));
+    transition: background .2s ease;
+
+    @media screen and (min-width: 1080px) {
+      transform: translateX(calc((99.9% / 3) * 2));
+    }
+
+    &:hover {
+      background: $lightOrange;
+    }
+
+    p {
+      margin: -7px 0 19px 0;
+      padding: 0;
+
+      &:not(.link) {
+        font-size: 14px;
+      }
+    }
+
+    .link {
+      opacity: 1;
+      margin: 0 0 -13px 0;
+
+      &:after {
+        content: '→';
+        float: right;
+      }
+    }
+
+  }
 }
 
 .occasions {
+  padding: $large 0;
 
+  .carousel {
+    width: calc(100% + ((100vw - 100%) / 2));
+    height: 100%;
+    overflow-y: hidden;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: calc((((100% / 12) * 4) * 5) + ($small * 4));
+    white-space: nowrap;
+  }
+
+  li {
+    width: calc((100vw / 12) * 4);
+    background: $lightGreen;
+    height: 500px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: $large;
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 300px;
+    left: 0;
+    background: white;
+    width: calc(100% - $large);
+    min-height: 200px;
+    padding: $small;
+    box-sizing: border-box;
+
+    h2,
+    p,
+    hr {
+      white-space: normal;
+    }
+
+    p {
+      color: $lightGrey;
+      font-size: 14px;
+    }
+  }
 }
 
 .contact-us {

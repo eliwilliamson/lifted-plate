@@ -3,7 +3,8 @@
   display: flex;
   height: 80vh;
   top: 10vh;
-  left: $small;
+  left: $micro;
+  z-index: 10;
 
   .indicator,
   nav {
@@ -41,10 +42,10 @@
       & > [class*="bar"] {
         width: 2px;
         margin: 0 auto;
+        background: $green;
       }
 
       .active-bar {
-        background: $green;
         position: absolute;
         left: 50%;
         margin-left: -1px;
@@ -53,25 +54,22 @@
 
       .bg-bar {
         height: 100%;
-        background: $lightGreen;
+        opacity: .3;
       }
     }
   }
 
-
   nav {
     justify-content: center;
+
+    @media screen and (max-width: 1350px) {
+      display: none;
+    }
 
     .nav-link {
       color: $grey;
       display: flex;
-      font-weight: $bold;
-      font-size: 12px;
       opacity: .5;
-      letter-spacing: 3px;
-      line-height: 33px;
-      margin: 0;
-      padding: 0;
       transition: opacity .5s ease;
 
       &.active,
