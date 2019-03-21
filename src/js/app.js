@@ -98,8 +98,49 @@ function scrollTo(element) {
 function initScrollClick(e) {
   var target = e.toElement.getAttribute('data-scroll');
   scrollTo(document.getElementById(target));
-};
+}
 
 for (var i = 0; i < classname.length; i++) {
   classname[i].addEventListener('click', initScrollClick, false);
+}
+
+// carousel functionality
+var carouselContainer = document.getElementById("carousel");
+var carouselProgressBar = document.getElementById("carousel-active-bar");
+var carouselBtn = document.getElementsByClassName("carousel-btn");
+var activeIndex = 1;
+
+function moveCarousel(e) {
+  var direction = e.toElement.getAttribute('class');
+  var containerWidth = carouselContainer.offsetWidth;
+  var scrollOffset = carouselContainer.scrollLeft;
+  var cardWidth = containerWidth / 5;
+
+  if (direction.includes("prev-slide")) { // previous slide
+    activeIndex = activeIndex - 1;
+
+    if (carouselBtn[1].disabled) {
+      carouselBtn[1].disabled = false;
+    }
+    carouselContainer.scrollLeft = scrollOffset - cardWidth;
+    if (scrollOffset < cardWidth) {
+      this.disabled = true;
+    }
+  } else { // next slide
+    activeIndex = activeIndex + 1;
+
+    if (carouselBtn[0].disabled) {
+      carouselBtn[0].disabled = false;
+    }
+    carouselContainer.scrollLeft = scrollOffset + cardWidth;
+    if (scrollOffset > containerWidth - (cardWidth * 2.5)) {
+      this.disabled = true;
+    }
+  }
+
+  carouselProgressBar.style.width = ((activeIndex / 5) * 100) + "%";
+}
+
+for (var i = 0; i < carouselBtn.length; i++) {
+  carouselBtn[i].addEventListener('click', moveCarousel, false);
 }

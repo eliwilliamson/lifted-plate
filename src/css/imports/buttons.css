@@ -17,7 +17,8 @@ button {
 }
 
 .nav-link,
-.our-story .cta .link {
+.our-story .cta .link,
+.carousel-btn {
   text-transform: uppercase;
   font-weight: $bold;
   font-size: 12px;
