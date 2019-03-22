@@ -1,4 +1,5 @@
 {{ define "main" }}
+<div id="notification">Thank you, your form has been submitted. Talk soon!</div>
 <section id="hero" class="hero">
   <div class="container">
     <div class="content">
@@ -102,6 +103,84 @@
 </section>
 
 <section id="contact-us" class="contact-us">
-  <h2>CONTACT US</h2>
+  <div class="container">
+    <form id="contact-form" name="contact" method="POST" netlify-honeypot="bot-field" action="/?=thank-you" netlify>
+      <div class="intro">
+        <h2>Contact Us</h2>
+        <hr>
+        <p>Tell us about your event and we’ll be in touch within 24 hours with a sample menu.</p>
+      </div>
+      <div class="form">
+        <div class="clearfix">
+          <input placeholder="Your Name" name="name" type="text" class="half" required/>
+          <input placeholder="Your Phone Number" name="phone" type="tel" class="half"/>
+          <input placeholder="Your Email Address" name="email" type="email" required/>
+        </div>
+        <div class="clearfix">
+          <div class="dropdown half">
+            <select name="Type of Event" required>
+              <option value="Type of Event" selected disabled>Type of Event</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Corporate event">Corporate event</option>
+              <option value="Office Catering">Office Catering</option>
+              <option value="Private Events">Private Events</option>
+              <option value="Meetings">Meetings</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="dropdown half">
+            <select required>
+              <option value="Total Guest Count" selected disabled>Total Guest Count</option>
+              <option value="<100"><100</option>
+              <option value="100 - 250">100 - 250</option>
+              <option value="250 - 500">250 - 500</option>
+              <option value="500 - 1,000">500 - 1,000</option>
+              <option value="1,000+ ">1,000+</option>
+            </select>
+          </div>
+        </div>
+        <div class="checkboxes clearfix">
+          <h4>Services Requested (select all)</h4>
+          <hr>
+          <div class="half">
+            <input id="full-service" type="checkbox" value="Full service catering" name="Full service catering">
+            <label for="full-service">Full service catering</label>
+          </div>
+          <div class="half">
+            <input id="drop-off" type="checkbox" value="Drop-off catering" name="Drop-off catering">
+            <label for="drop-off">Drop-off catering</label>
+          </div>
+          <div class="half">
+            <input id="event-coord" type="checkbox" value="Event coordination" name="Event coordination">
+            <label for="event-coord">Event coordination</label>
+          </div>
+          <div class="half">
+            <input id="event-styling" type="checkbox" value="Event styling" name="Event styling">
+            <label for="event-styling">Event styling</label>
+          </div>
+          <div class="half">
+            <input id="other" type="checkbox" value="Other" name="Other">
+            <label for="other">Other</label>
+          </div>
+        </div>
+        <div class="clearfix">
+          <input placeholder="Date of Event" name="date" type="text" class="half" required/>
+          <input placeholder="Event Address/Location" name="location" type="text" class="half" required/>
+        </div>
+        <textarea placeholder="Tell us about your event" name="message" rows="1" required></textarea>
+        <button class="btn-primary" type="submit">Send</button>
+      </div>
+    </form>
+    <aside>
+      <h4>Now Serving</h4>
+      <p>The San Francisco Bay Area</p>
+
+      <h4>Get in Touch</h4>
+      <p><a href="hello@liftedplate.com">hello@liftedplate.com</a></p>
+
+      <h4>Social</h4>
+      <p>Connect with us on <a href="#">Facebook</a></p>
+    </aside>
+  </div>
 </section>
 {{end}}

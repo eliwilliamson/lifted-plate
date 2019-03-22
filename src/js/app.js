@@ -144,3 +144,10 @@ function moveCarousel(e) {
 for (var i = 0; i < carouselBtn.length; i++) {
   carouselBtn[i].addEventListener('click', moveCarousel, false);
 }
+
+// form submitted notification
+var notification = document.getElementById("notification");
+
+if(window.location.href.indexOf("thank-you") > -1) {
+  notification.classList.add('active');
+}

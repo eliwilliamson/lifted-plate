@@ -18,7 +18,8 @@ button {
 
 .nav-link,
 .our-story .cta .link,
-.carousel-btn {
+.carousel-btn,
+.btn-primary {
   text-transform: uppercase;
   font-weight: $bold;
   font-size: 12px;
@@ -27,4 +28,16 @@ button {
   line-height: 33px;
   margin: 0;
   padding: 0;
+}
+
+.btn-primary {
+  padding: $micro $medium 4px $medium;
+  opacity: 1;
+  background: $orange;
+  color: white;
+  transition: background .2s ease;
+
+  &:hover {
+    background: $grey;
+  }
 }

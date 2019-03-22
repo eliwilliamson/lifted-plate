@@ -1,17 +1,25 @@
 .footer {
-  position: relative;
+  background: white;
+
+  .watermark {
+    position: absolute;
+    width: 220px;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+  }
 
   .copyright {
-    position: absolute;
-    bottom: $tiny;
-    left: $small;
-    opacity: 0.3;
+    position: relative;
+    color: $grey;
     font-size: 10px;
     line-height: $medium;
+    display: block;
+    text-align: right;
 
-    @media screen and (min-width: $tablet) {
-      left: $medium;
-      bottom: $small;
+    span {
+      opacity: .3;
     }
   }
 }

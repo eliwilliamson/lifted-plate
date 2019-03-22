@@ -10,6 +10,35 @@ section:not(.our-story) {
   background-color: white;
 }
 
+@keyframes showNotification {
+  0%,
+  100% {
+    transform: translateY(-200%);
+  }
+
+  10%,
+  90% {
+    transform: translateY(0);
+  }
+}
+
+#notification {
+  background: $lightGreen;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: $small;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 11;
+  font-weight: $bold;
+  transform: translateY(-200%);
+
+  &.active {
+    animation: showNotification 5s 2s ease forwards;
+  }
+}
+
 .hero {
   lost-align: middle-left;
   position: relative;
@@ -80,6 +109,7 @@ section:not(.our-story) {
 .our-story {
   position: relative;
   padding-bottom: calc(34px + $large);
+  min-height: 100vh;
 
   &:after {
     content: '';
@@ -147,13 +177,14 @@ section:not(.our-story) {
     padding: $small;
     transform: translateX(calc((100% / 3) - 3px + $small));
     transition: background .2s ease;
+    cursor: pointer;
 
     @media screen and (min-width: 1080px) {
       transform: translateX(calc((99.9% / 3) * 2));
     }
 
     &:hover {
-      background: $lightOrange;
+      background: $grey;
     }
 
     p {
@@ -192,6 +223,7 @@ section:not(.our-story) {
 .occasions {
   padding: $large 0;
   position: relative;
+  min-height: 100vh;
 
   &:before {
     background: linear-gradient(to right, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
@@ -334,5 +366,181 @@ section:not(.our-story) {
 }
 
 .contact-us {
+  padding: $large 0 $xl 0;
+  position: relative;
 
+  &:after {
+    content: '';
+    background: $lightestGreen;
+    position: absolute;
+    left: 57.5vw;
+    width: 42.5vw;
+    top: 0;
+    height: calc(100% + $medium);
+  }
+
+  hr + p {
+    font-size: 14px;
+    color: $lightGrey;
+    max-width: 350px;
+  }
+
+  form,
+  aside {
+    position: relative;
+    z-index: 2;
+  }
+
+  form {
+    lost-column: 8/12;
+
+    .form {
+      label,
+      input,
+      textarea,
+      select {
+        color: $grey;
+        display: block;
+        font-weight: $bold;
+        font-size: 12px;
+        line-height: 33px;
+        text-transform: uppercase;
+        font-weight: $bold;
+        letter-spacing: 1px;
+        padding: $micro 0;
+        margin: $medium 0;
+        width: 100%;
+        transition: border .2s ease;
+
+        &::placeholder {
+          color: $grey;
+          letter-spacing: 3px;
+        }
+
+        &:focus {
+          border-bottom-color: $green;
+        }
+      }
+
+      label {
+        color: $grey;
+        letter-spacing: 3px;
+      }
+
+      input,
+      textarea {
+        display: block;
+        background: none;
+        border: none;
+        border-bottom: 1px solid $grey;
+        box-sizing: border-box;
+        outline: none;
+        box-shadow: none;
+        width: 100%;
+      }
+
+      textarea {
+        margin-top: 0;
+      }
+
+      .half {
+        lost-column: 1/2;
+        float: left;
+
+        > *:not(select) {
+          width: auto;
+          float: left;
+          display: inline;
+          margin: 0;
+          padding: 0;
+
+          &[type="checkbox"] {
+            margin: 9px $micro 0 0;
+          }
+        }
+      }
+
+      .checkboxes {
+        h4 {
+          margin-top: $medium;
+        }
+
+        .half {
+          margin-top: $tiny;
+        }
+      }
+
+      select {
+        -webkit-appearance: none;
+        background: none;
+        border: none;
+        color: $grey;
+        border-radius: 0;
+        outline: none;
+        text-transform: uppercase;
+        margin: 0;
+        padding: 4px $tiny;
+        box-sizing: border-box;
+        width: 100%;
+        transition: color .2s ease;
+        cursor: pointer;
+      }
+
+      .dropdown {
+        box-sizing: border-box;
+        position: relative;
+        border: 1px solid $grey;
+        background: transparent;
+        transition: background .2s ease, border .2s ease;
+        cursor: pointer;
+        margin: $small 0 $tiny 0;
+
+        &:after {
+          content: '▼';
+          position: absolute;
+          right: $tiny;
+          top: 17px;
+          z-index: 2;
+          font-size: $micro;
+          transition: color .2s ease;
+        }
+
+        &:hover {
+          background: $orange;
+          border-color: $orange;
+
+          &:after {
+            color: white;
+          }
+
+          select {
+            color: white;
+          }
+        }
+      }
+    }
+
+    .btn-primary {
+      float: right;
+    }
+  }
+
+  aside {
+    lost-column: 3/12;
+    lost-offset: 1/12;
+
+    h4 {
+      margin-top: $medium;
+    }
+
+    p {
+      font-size: 14px;
+      color: $lightGrey;
+
+      a {
+        color: $grey;
+        text-decoration: underline;
+      }
+    }
+  }
 }
