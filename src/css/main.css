@@ -11,31 +11,25 @@ section:not(.our-story) {
 }
 
 @keyframes showNotification {
-  0%,
-  100% {
+  0% {
     transform: translateY(-200%);
   }
 
-  10%,
-  90% {
+  100% {
     transform: translateY(0);
   }
 }
 
 #notification {
-  background: $lightGreen;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: $small;
-  width: 100%;
-  box-sizing: border-box;
-  z-index: 11;
-  font-weight: $bold;
-  transform: translateY(-200%);
+  display: none;
 
   &.active {
-    animation: showNotification 5s 2s ease forwards;
+    display: block;
+    background: $lightGreen;
+    padding: $small;
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: $bold;
   }
 }
 
