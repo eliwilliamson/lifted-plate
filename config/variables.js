@@ -47,8 +47,8 @@ module.exports = {
   mobile: '480px',
   tabletMax: '767px',
   tablet: '768px',
-  desktopMax: '959px',
-  desktop: '960px',
+  desktopMax: '1063px',
+  desktop: '1064px',
   displayMax: '1199px',
   display: '1200px',
 }

@@ -21,6 +21,11 @@ section {
   color: $grey;
 }
 
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 .clearfix {
   lost-utility: clearfix;
 }

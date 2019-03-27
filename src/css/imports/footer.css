@@ -1,6 +1,11 @@
 .footer {
   background: white;
 
+  @media screen and (max-width: $tabletMax) {
+    background: $lightestGreen;
+    padding-top: $medium;
+  }
+
   .watermark {
     position: absolute;
     width: 220px;

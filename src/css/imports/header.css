@@ -1,84 +1,113 @@
 .header {
-  position: fixed;
-  display: flex;
-  height: 80vh;
-  top: 10vh;
-  left: $micro;
-  z-index: 10;
-
-  .indicator,
-  nav {
-    display: flex;
-    flex-direction: column;
+  #contact-us-link {
+    color: $orange;
+    opacity: 1;
   }
 
-  .indicator {
-    font-family: $roboto;
-    justify-content: space-between;
+  @media screen and (max-width: $desktopMax) {
+    background: white url(/img/logo.svg) no-repeat $small $small;
+    background-size: auto 50px;
+    padding-top: calc(50px + ($small * 2));
 
-    .sum {
-      color: $lightGrey;
-    }
-
-    .number,
-    .button-nav {
-      transform: rotateZ(-90deg);
-    }
-
-    .nav-arrow-link {
-      color: $grey;
-
-      &:disabled {
-        color: $lightGrey;
-      }
-    }
-
-    .progress-bar {
-      height: calc(100% - $xl);
-      align-self: stretch;
-      width: 100%;
-      position: relative;
-
-      & > [class*="bar"] {
-        width: 2px;
-        margin: 0 auto;
-        background: $green;
-      }
-
-      .active-bar {
-        position: absolute;
-        left: 50%;
-        margin-left: -1px;
-        transition: height .5s ease;
-      }
-
-      .bg-bar {
-        height: 100%;
-        opacity: .3;
-      }
-    }
-  }
-
-  nav {
-    justify-content: center;
-
-    @media screen and (max-width: 1350px) {
+    .indicator {
       display: none;
     }
 
-    .nav-link {
-      color: $grey;
+    nav {
+      background: $lightestGreen;
+      padding: 0 $small;
+      box-sizing: border-box;
       display: flex;
-      opacity: .5;
-      transition: opacity .5s ease;
+      justify-content: space-between;
 
-      &.active,
-      &:hover {
-        opacity: 1;
+      @media screen and (min-width: $tablet) {
+        justify-content: space-around;
       }
 
-      &#contact-us-link {
-        color: $orange;
+      button {
+        letter-spacing: 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    position: fixed;
+    display: flex;
+    height: 80vh;
+    top: 10vh;
+    left: $micro;
+    z-index: 10;
+
+    .indicator,
+    nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .indicator {
+      font-family: $roboto;
+      justify-content: space-between;
+
+      .sum {
+        color: $lightGrey;
+      }
+
+      .number,
+      .button-nav {
+        transform: rotateZ(-90deg);
+      }
+
+      .nav-arrow-link {
+        color: $grey;
+
+        &:disabled {
+          color: $lightGrey;
+        }
+      }
+
+      .progress-bar {
+        height: calc(100% - $xl);
+        align-self: stretch;
+        width: 100%;
+        position: relative;
+
+        & > [class*="bar"] {
+          width: 2px;
+          margin: 0 auto;
+          background: $green;
+        }
+
+        .active-bar {
+          position: absolute;
+          left: 50%;
+          margin-left: -1px;
+          transition: height .5s ease;
+        }
+
+        .bg-bar {
+          height: 100%;
+          opacity: .3;
+        }
+      }
+    }
+
+    nav {
+      justify-content: center;
+
+      @media screen and (max-width: 1350px) {
+        display: none;
+      }
+
+      .nav-link {
+        color: $grey;
+        display: flex;
+        opacity: .5;
+        transition: opacity .5s ease;
+
+        &.active,
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }

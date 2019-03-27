@@ -113,8 +113,16 @@ var activeIndex = 1;
 function moveCarousel(e) {
   var direction = e.toElement.getAttribute('class');
   var containerWidth = carouselContainer.offsetWidth;
+  var windowWidth = window.innerWidth;
   var scrollOffset = carouselContainer.scrollLeft;
-  var cardWidth = containerWidth / 5;
+
+  if (windowWidth < 768) {
+    var cardWidth = windowWidth - 48;
+  } else if (windowWidth < 1064) {
+    var cardWidth = 350;
+  } else {
+    var cardWidth = containerWidth / 5;
+  }
 
   if (direction.includes("prev-slide")) { // previous slide
     activeIndex = activeIndex - 1;
@@ -132,8 +140,10 @@ function moveCarousel(e) {
     if (carouselBtn[0].disabled) {
       carouselBtn[0].disabled = false;
     }
+
     carouselContainer.scrollLeft = scrollOffset + cardWidth;
-    if (scrollOffset > containerWidth - (cardWidth * 2.5)) {
+
+    if (activeIndex == 5) {
       this.disabled = true;
     }
   }
