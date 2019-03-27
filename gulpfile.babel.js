@@ -111,11 +111,14 @@ gulp.task("optimize", () => (
     .pipe($.responsive({
         "**/*.{jpg,png}": [{
           width: "33%",
+          progressive: true
         }, {
           width: "66%",
+          progressive: true,
           rename: {suffix: "@2x"}
         }, {
           width: "100%",
+          progressive: true,
           rename: {suffix: "@3x"}
         }]
       }, {

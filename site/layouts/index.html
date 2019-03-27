@@ -111,19 +111,22 @@
         <p>Tell us about your event and we’ll be in touch within 24 hours with a sample menu.</p>
       </div>
       <div class="form">
+        <label for="name" class="hidden">name</label>
+        <label for="phone" class="hidden">phone</label>
+        <label for="email" class="hidden">email</label>
+        <label for="type" class="hidden">type</label>
+        <label for="count" class="hidden">count</label>
+        <label for="date" class="hidden">date</label>
+        <label for="address" class="hidden">address</label>
+        <label for="message" class="hidden">message</label>
 
-        <label for="" class="hidden">
         <div class="clearfix">
-          <label for="name" class="hidden"></label>
           <input id="name" placeholder="Your Name" name="name" type="text" class="half" required/>
-          <label for="phone" class="hidden"></label>
           <input id="phone" placeholder="Your Phone Number" name="phone" type="tel" class="half"/>
-          <label for="email" class="hidden"></label>
           <input id="email" placeholder="Your Email Address" name="email" type="email" required/>
         </div>
         <div class="clearfix">
           <div class="dropdown half">
-            <label for="type" class="hidden"></label>
             <select id="type" name="Type of Event" required>
               <option value="Type of Event" selected disabled>Type of Event</option>
               <option value="Wedding">Wedding</option>
@@ -135,7 +138,6 @@
             </select>
           </div>
           <div class="dropdown half">
-            <label for="count" class="hidden"></label>
             <select id="count" required>
               <option value="Total Guest Count" selected disabled>Total Guest Count</option>
               <option value="<100"><100</option>
@@ -171,12 +173,9 @@
           </div>
         </div>
         <div class="clearfix">
-          <label for="date" class="hidden"></label>
           <input id="date" placeholder="Date of Event" name="date" type="text" class="half" required/>
-          <label for="address" class="hidden"></label>
           <input id="address" placeholder="Event Address/Location" name="location" type="text" class="half" required/>
         </div>
-        <label for="message" class="hidden"></label>
         <textarea id="message" placeholder="Tell us about your event" name="message" rows="1" required></textarea>
         <button class="btn-primary" type="submit">Send</button>
       </div>

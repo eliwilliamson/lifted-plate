@@ -541,6 +541,7 @@ section:not(.our-story) {
       input,
       textarea,
       select {
+        border-radius: 0;
         color: $grey;
         display: block;
         font-weight: $bold;
@@ -622,6 +623,8 @@ section:not(.our-story) {
       }
 
       select {
+        -o-appearance: none;
+        -moz-appearance: none;
         -webkit-appearance: none;
         background: none;
         border: none;
