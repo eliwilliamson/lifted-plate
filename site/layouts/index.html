@@ -103,7 +103,7 @@
 
 <section id="contact-us" class="contact-us">
   <div class="container">
-    <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?=thank-you" netlify>
+    <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/?=thank-you" netlify data-validate>
       <div class="intro">
         <h2>Contact Us</h2>
         <hr>
@@ -172,7 +172,7 @@
           </div>
         </div>
         <div class="clearfix">
-          <input id="date" placeholder="Date of Event" name="date" type="text" class="half" required/>
+          <input id="date" placeholder="Date of Event" name="date" type="date" class="half" required/>
           <input id="address" placeholder="Event Address/Location" name="location" type="text" class="half" required/>
         </div>
         <textarea id="message" placeholder="Tell us about your event" name="message" rows="1" required></textarea>

@@ -43,3 +43,23 @@ hr {
   margin: $tiny 0;
   transform: translateX(calc($xl / -2));
 }
+
+.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-style: italic;
+  font-size: 14px;
+  position: absolute;
+  transform: translateY(-27px);
+
+  &.halved {
+    transform: translateY(103px);
+
+    &:last-child {
+      left: calc(50% + 10px);
+    }
+  }
+}

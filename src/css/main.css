@@ -576,6 +576,20 @@ section:not(.our-story) {
         width: 100%;
       }
 
+      input[type="date"] {
+
+        &:before {
+          content: attr(placeholder) !important;
+          color: $lightGrey;
+          margin-right: 0.5em;
+        }
+
+        &:focus:before,
+        &:valid:before {
+          content: "";
+        }
+      }
+
       textarea {
         margin-top: 0;
       }
@@ -586,6 +600,12 @@ section:not(.our-story) {
         @media screen and (min-width: $tablet) {
           lost-column: 1/2;
           float: left;
+
+          &#phone,
+          &#address {
+            margin-right: 0;
+            margin-left: auto;
+          }
         }
 
         > *:not(select) {
