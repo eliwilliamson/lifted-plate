@@ -109,7 +109,7 @@ gulp.task("optimize", () => (
   // resize and compress images
    gulp.src(["dist/img/**/*.{jpg,png}"])
     .pipe($.responsive({
-        "**/*.jpg": [{
+        "**/*.{jpg,png}": [{
           width: "33%",
         }, {
           width: "66%",
@@ -117,16 +117,7 @@ gulp.task("optimize", () => (
         }, {
           width: "100%",
           rename: {suffix: "@3x"}
-        }],
-        "**/*.png": [{
-          width: "33%",
-        }, {
-          width: "66%",
-          rename: {suffix: "@2x"}
-        }, {
-          width: "100%",
-          rename: {suffix: "@3x"}
-        }],
+        }]
       }, {
         withoutEnlargement: true,
         skipOnEnlargement: false,

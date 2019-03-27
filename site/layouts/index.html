@@ -3,7 +3,7 @@
 <section id="hero" class="hero">
   <div class="container">
     <div class="content">
-      <img class="logo" src="/img/logo.svg"/>
+      <img alt="image"class="logo" src="/img/logo.svg"/>
       <h1>Every moment worth celebrating</h1>
       <hr>
       <h3>We are Lifted Plate – your full service catering and events company, serving the San Francisco Bay Area.</h3>
@@ -16,7 +16,7 @@
 </section>
 
 <section class="video">
-  <iframe src="https://player.vimeo.com/video/325567862?autoplay=1&loop=1&color=00C7B7&title=0&byline=0&portrait=0" allow="autoplay" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe title="background-video" src="https://player.vimeo.com/video/325567862?autoplay=1&loop=1&color=00C7B7&title=0&byline=0&portrait=0" allow="autoplay" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </section>
 
 <section id="our-story" class="our-story">
@@ -43,7 +43,7 @@
       <p>Tell us your story.</p>
       <p class="link">contact us</p>
     </div>
-    <img class="rosemary" src="/img/rosemary.png"/>
+    <img alt="image"class="rosemary" src="/img/rosemary.png"/>
   </div>
 </section>
 
@@ -111,14 +111,20 @@
         <p>Tell us about your event and we’ll be in touch within 24 hours with a sample menu.</p>
       </div>
       <div class="form">
+
+        <label for="" class="hidden">
         <div class="clearfix">
-          <input placeholder="Your Name" name="name" type="text" class="half" required/>
-          <input placeholder="Your Phone Number" name="phone" type="tel" class="half"/>
-          <input placeholder="Your Email Address" name="email" type="email" required/>
+          <label for="name" class="hidden"></label>
+          <input id="name" placeholder="Your Name" name="name" type="text" class="half" required/>
+          <label for="phone" class="hidden"></label>
+          <input id="phone" placeholder="Your Phone Number" name="phone" type="tel" class="half"/>
+          <label for="email" class="hidden"></label>
+          <input id="email" placeholder="Your Email Address" name="email" type="email" required/>
         </div>
         <div class="clearfix">
           <div class="dropdown half">
-            <select name="Type of Event" required>
+            <label for="type" class="hidden"></label>
+            <select id="type" name="Type of Event" required>
               <option value="Type of Event" selected disabled>Type of Event</option>
               <option value="Wedding">Wedding</option>
               <option value="Corporate event">Corporate event</option>
@@ -129,7 +135,8 @@
             </select>
           </div>
           <div class="dropdown half">
-            <select required>
+            <label for="count" class="hidden"></label>
+            <select id="count" required>
               <option value="Total Guest Count" selected disabled>Total Guest Count</option>
               <option value="<100"><100</option>
               <option value="100 - 250">100 - 250</option>
@@ -164,10 +171,13 @@
           </div>
         </div>
         <div class="clearfix">
-          <input placeholder="Date of Event" name="date" type="text" class="half" required/>
-          <input placeholder="Event Address/Location" name="location" type="text" class="half" required/>
+          <label for="date" class="hidden"></label>
+          <input id="date" placeholder="Date of Event" name="date" type="text" class="half" required/>
+          <label for="address" class="hidden"></label>
+          <input id="address" placeholder="Event Address/Location" name="location" type="text" class="half" required/>
         </div>
-        <textarea placeholder="Tell us about your event" name="message" rows="1" required></textarea>
+        <label for="message" class="hidden"></label>
+        <textarea id="message" placeholder="Tell us about your event" name="message" rows="1" required></textarea>
         <button class="btn-primary" type="submit">Send</button>
       </div>
     </form>
