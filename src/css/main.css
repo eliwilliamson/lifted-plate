@@ -531,7 +531,7 @@ section:not(.our-story) {
     }
 
     .form {
-      label,
+      label:not(.error),
       input,
       textarea,
       select {
@@ -557,9 +557,17 @@ section:not(.our-story) {
         &:focus {
           border-bottom-color: $green;
         }
+
+        &.error {
+          border-color: red;
+
+          &:not(select) {
+            margin-bottom: 4px;
+          }
+        }
       }
 
-      label {
+      label:not(.error) {
         color: $grey;
         letter-spacing: 3px;
       }
@@ -591,7 +599,11 @@ section:not(.our-story) {
       }
 
       textarea {
-        margin-top: 0;
+        text-transform: none;
+
+        &::placeholder {
+          text-transform: uppercase;
+        }
       }
 
       .half {
@@ -623,7 +635,7 @@ section:not(.our-story) {
 
       .checkboxes {
         h4 {
-          margin-top: $medium;
+          margin-top: $micro;
         }
 
         .half {
@@ -641,7 +653,7 @@ section:not(.our-story) {
         -moz-appearance: none;
         -webkit-appearance: none;
         background: none;
-        border: none;
+        border: 1px solid $grey;
         color: $grey;
         border-radius: 0;
         outline: none;
@@ -652,16 +664,20 @@ section:not(.our-story) {
         width: 100%;
         transition: color .2s ease;
         cursor: pointer;
+        transition: border .2s ease;
+
+        &.error {
+          border-color: red;
+        }
       }
 
       .dropdown {
         box-sizing: border-box;
         position: relative;
-        border: 1px solid $grey;
         background: transparent;
-        transition: background .2s ease, border .2s ease;
+        transition: background .2s ease;
         cursor: pointer;
-        margin: $small 0 $tiny 0;
+        margin: $medium 0;
 
         &:after {
           content: '▼';
@@ -675,7 +691,10 @@ section:not(.our-story) {
 
         &:hover {
           background: $orange;
-          border-color: $orange;
+
+          select {
+            border-color: $orange;
+          }
 
           &:after {
             color: white;
@@ -684,6 +703,11 @@ section:not(.our-story) {
           select {
             color: white;
           }
+        }
+
+        label.error {
+          position: absolute;
+          margin-top: 4px;
         }
       }
     }

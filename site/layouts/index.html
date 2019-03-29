@@ -119,62 +119,56 @@
         <label for="address" class="hidden">address</label>
         <label for="message" class="hidden">message</label>
 
-        <div class="clearfix">
-          <input id="name" placeholder="Your Name" name="name" type="text" class="half" required/>
-          <input id="phone" placeholder="Your Phone Number" name="phone" type="tel" class="half"/>
-          <input id="email" placeholder="Your Email Address" name="email" type="email" required/>
+        <input id="name" placeholder="Your Name" name="name" type="text" required/>
+        <input id="phone" placeholder="Your Phone Number" name="phone" type="tel"/>
+        <input id="email" placeholder="Your Email Address" name="email" type="email" required/>
+        <div class="dropdown">
+          <select id="type" name="Type of Event" required>
+            <option value="Type of Event" selected disabled>Type of Event</option>
+            <option value="Wedding">Wedding</option>
+            <option value="Corporate event">Corporate event</option>
+            <option value="Office Catering">Office Catering</option>
+            <option value="Private Events">Private Events</option>
+            <option value="Meetings">Meetings</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
-        <div class="clearfix">
-          <div class="dropdown half">
-            <select id="type" name="Type of Event" required>
-              <option value="Type of Event" selected disabled>Type of Event</option>
-              <option value="Wedding">Wedding</option>
-              <option value="Corporate event">Corporate event</option>
-              <option value="Office Catering">Office Catering</option>
-              <option value="Private Events">Private Events</option>
-              <option value="Meetings">Meetings</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="dropdown half">
-            <select id="count" required>
-              <option value="Total Guest Count" selected disabled>Total Guest Count</option>
-              <option value="<100"><100</option>
-              <option value="100 - 250">100 - 250</option>
-              <option value="250 - 500">250 - 500</option>
-              <option value="500 - 1,000">500 - 1,000</option>
-              <option value="1,000+ ">1,000+</option>
-            </select>
-          </div>
+        <div class="dropdown">
+          <select id="count" required>
+            <option value="Total Guest Count" selected disabled>Total Guest Count</option>
+            <option value="<100"><100</option>
+            <option value="100 - 250">100 - 250</option>
+            <option value="250 - 500">250 - 500</option>
+            <option value="500 - 1,000">500 - 1,000</option>
+            <option value="1,000+ ">1,000+</option>
+          </select>
         </div>
         <div class="checkboxes clearfix">
           <h4>Services Requested (select all)</h4>
           <hr>
           <div class="half">
-            <input id="full-service" type="checkbox" value="Full service catering" name="Full service catering">
+            <input id="full-service" type="checkbox" value="<-- I need this" name="Full service catering">
             <label for="full-service">Full service catering</label>
           </div>
           <div class="half">
-            <input id="drop-off" type="checkbox" value="Drop-off catering" name="Drop-off catering">
+            <input id="drop-off" type="checkbox" value="<-- I need this" name="Drop-off catering">
             <label for="drop-off">Drop-off catering</label>
           </div>
           <div class="half">
-            <input id="event-coord" type="checkbox" value="Event coordination" name="Event coordination">
+            <input id="event-coord" type="checkbox" value="<-- I need this" name="Event coordination">
             <label for="event-coord">Event coordination</label>
           </div>
           <div class="half">
-            <input id="event-styling" type="checkbox" value="Event styling" name="Event styling">
+            <input id="event-styling" type="checkbox" value="<-- I need this" name="Event styling">
             <label for="event-styling">Event styling</label>
           </div>
           <div class="half">
-            <input id="other" type="checkbox" value="Other" name="Other">
+            <input id="other" type="checkbox" value="<-- I need this" name="Other">
             <label for="other">Other</label>
           </div>
         </div>
-        <div class="clearfix">
-          <input id="date" placeholder="Date of Event" name="date" type="date" class="half" required/>
-          <input id="address" placeholder="Event Address/Location" name="location" type="text" class="half" required/>
-        </div>
+        <input id="date" placeholder="Date of Event:" name="date" type="date" required/>
+        <input id="address" placeholder="Event Address/Location" name="location" type="text" required/>
         <textarea id="message" placeholder="Tell us about your event" name="message" rows="1" required></textarea>
         <button class="btn-primary" type="submit">Send</button>
       </div>

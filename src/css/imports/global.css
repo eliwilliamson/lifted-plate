@@ -44,22 +44,12 @@ hr {
   transform: translateX(calc($xl / -2));
 }
 
-.error {
-  border-color: red;
-}
-
-.error-message {
+label.error {
   color: red;
   font-style: italic;
-  font-size: 14px;
-  position: absolute;
-  transform: translateY(-27px);
+  font-size: 12px;
 
-  &.halved {
-    transform: translateY(103px);
-
-    &:last-child {
-      left: calc(50% + 10px);
-    }
+  + .btn-primary {
+    margin-top: $medium;
   }
 }

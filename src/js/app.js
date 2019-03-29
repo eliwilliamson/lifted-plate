@@ -163,16 +163,4 @@ if(window.location.href.indexOf("thank-you") > -1) {
 }
 
 // init form validation
-validate.init({
-  afterShowError: function (field, error) {
-    if (field.classList.contains("half")) {
-      field.nextSibling.classList.add('halved');
-    }
-  },
-  afterRemoveError: function (field) {
-    if (field.classList.contains("half")) {
-      field.nextSibling.classList.remove('halved');
-    }
-  }
-});
-
+$("form").validate();
