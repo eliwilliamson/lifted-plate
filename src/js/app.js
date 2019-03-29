@@ -85,24 +85,12 @@ contactUsWatcher.exitViewport(function() {
 });
 
 // scrolling nav functionality
-var classname = document.getElementsByClassName("scroll-to");
-
-function scrollTo(element) {
-  window.scroll({
-    behavior: 'smooth',
-    left: 0,
-    top: element.offsetTop
+$(document).ready(function() {
+  $('a[href^="#"]').click(function(e) {
+    e.preventDefault();
+    $(window).stop(true).scrollTo(this.hash, {duration:1000, interrupt:true});
   });
-}
-
-function initScrollClick(e) {
-  var target = e.toElement.getAttribute('data-scroll');
-  scrollTo(document.getElementById(target));
-}
-
-for (var i = 0; i < classname.length; i++) {
-  classname[i].addEventListener('click', initScrollClick, false);
-}
+});
 
 // carousel functionality
 var carouselContainer = document.getElementById("carousel");
