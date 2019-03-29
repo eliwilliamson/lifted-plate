@@ -90,6 +90,10 @@ section:not(.our-story) {
     width: auto;
     margin-bottom: $small;
 
+    @media screen and (min-width: $mobile) {
+      height: 101px;
+    }
+
     @media screen and (min-width: $desktop) {
       display: initial;
     }
@@ -160,7 +164,7 @@ section:not(.our-story) {
 
     @media screen and (min-width: $desktop) {
       align-items: flex-start;
-      padding: $large $large $large 0;
+      padding: $large $large $medium 0;
       margin-top: calc(-106px - $large);
     }
 
@@ -205,8 +209,8 @@ section:not(.our-story) {
     }
 
     @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
       lost-column: 7/12;
-      margin-bottom: -139px;
     }
 
     p {
