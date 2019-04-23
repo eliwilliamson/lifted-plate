@@ -86,9 +86,14 @@ contactUsWatcher.exitViewport(function() {
 
 // scrolling nav functionality
 $(document).ready(function() {
-  $('a[href^="#"]').click(function(e) {
-    e.preventDefault();
-    $(window).stop(true).scrollTo(this.hash, {duration:1000, interrupt:true});
+  var $root = $('html, body');
+
+  $('a[href^="#"]').click(function () {
+      $root.animate({
+          scrollTop: $( $.attr(this, 'href') ).offset().top
+      }, 1000);
+
+      return false;
   });
 });
 
